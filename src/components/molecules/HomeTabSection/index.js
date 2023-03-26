@@ -1,20 +1,98 @@
-import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import React, {useState} from 'react';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
-import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
-import fonts from '../../../utils/fonts';
+import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
+import {FoodDummy1, FoodDummy2, FoodDummy3, FoodDummy4} from '../../../assets';
 import colors from '../../../utils/colors';
+import fonts from '../../../utils/fonts';
+import ItemListFood from '../ItemListFood';
 
-const FirstRoute = () => <View style={{flex: 1, backgroundColor: '#ff4081'}} />;
 
-const SecondRoute = () => (
-  <View style={{flex: 1, backgroundColor: '#673ab7'}} />
-);
+
+const NewTaste = () => {
+  const navigation = useNavigation();
+  return (
+    <ScrollView>
+      <View style={{paddingTop: 8}}>
+        <ItemListFood
+          image={FoodDummy1}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy2}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy3}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy4}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+      </View>
+    </ScrollView>
+  );
+};
+
+const Popular = () => {
+  const navigation = useNavigation();
+  return (
+    <ScrollView>
+      <View style={{paddingTop: 8}}>
+        <ItemListFood
+          image={FoodDummy4}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy3}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy1}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy2}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+      </View>
+    </ScrollView>
+  );
+};
+
+const Recommended = () => {
+  const navigation = useNavigation();
+  return (
+    <ScrollView>
+      <View style={{paddingTop: 8}}>
+        <ItemListFood
+          image={FoodDummy3}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy1}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy2}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+        <ItemListFood
+          image={FoodDummy4}
+          onPress={() => navigation.navigate('FoodDetail')}
+        />
+      </View>
+    </ScrollView>
+  );
+};
 
 const renderScene = SceneMap({
-  1: FirstRoute,
-  2: SecondRoute,
-  3: SecondRoute,
+  1: NewTaste,
+  2: Popular,
+  3: Recommended,
 });
 const renderTabBar = props => (
   <TabBar
@@ -27,7 +105,13 @@ const renderTabBar = props => (
       width: 0.53,
       // marginLeft: '1%'
     }}
-    style={{backgroundColor: colors.white}}
+    style={{
+      backgroundColor: colors.white,
+      elevation: 0,
+      shadowOpacity: 0,
+      borderBottomColor: colors.thickWhite,
+      borderBottomWidth: 1,
+    }}
     renderLabel={({route, focused, color}) => (
       <Text
         style={{
@@ -58,6 +142,7 @@ const HomeTabSection = () => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={{width: layout.width}}
+      style={{backgroundColor: 'white'}}
     />
   );
 };

@@ -3,24 +3,15 @@ import React from 'react';
 import {FoodDummy1, StartOff, StartOn} from '../../../assets';
 import colors from '../../../utils/colors';
 import fonts from '../../../utils/fonts';
+import {Rating} from '../../molecules';
 
 const FoodCard = ({img}) => {
   return (
     <View style={styles.container}>
       <Image source={img} style={styles.image} resizeMode={'cover'} />
-      <View style={styles.bottomContent} >
+      <View style={styles.bottomContent}>
         <Text style={styles.text}>Cherry Healthy</Text>
-
-        <View style={styles.scoreWrapper}>
-          <View style={styles.starWrapper}>
-            <StartOn />
-            <StartOn />
-            <StartOn />
-            <StartOn />
-            <StartOff />
-          </View>
-          <Text style={styles.score}>4.5</Text>
-        </View>
+        <Rating />
       </View>
     </View>
   );
@@ -52,22 +43,10 @@ const styles = StyleSheet.create({
   bottomContent: {
     padding: 12,
   },
-  scoreWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  starWrapper: {
-    flexDirection: 'row',
-    marginRight: 4,
-  },
+
   text: {
     color: colors.black,
     fontFamily: fonts.poppins[400],
     fontSize: 16,
-  },
-  score: {
-    color: colors.grey,
-    fontSize: 12,
-    fontFamily: fonts.poppins[400],
   },
 });

@@ -8,6 +8,7 @@ import {
   Home,
   Profile,
   Order,
+  FoodDetail,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -28,7 +29,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='MainApp'>
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
@@ -57,6 +58,11 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+       <Stack.Screen
+        name="FoodDetail"
+        component={FoodDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
