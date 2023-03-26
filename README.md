@@ -1,4 +1,4 @@
-# React Native Student App
+# React Native Modern Design
 
 ## Features
 
@@ -11,26 +11,16 @@
 To run the app locally, follow these steps:
 
 1. Clone the repository:
-
 git clone https://github.com/username/react-native-student-app.git
 
-markdown
-Copy code
-
 2. Install dependencies:
-
 cd react-native-student-app
 npm install
 
-markdown
-Copy code
 
 3. Run the app:
-
 npm start
-
-sql
-Copy code
+npx react-native run-android 
 
 ## Contributing
 
@@ -38,25 +28,13 @@ Contributions are welcome! If you would like to contribute to the project, pleas
 
 1. Fork the repository
 2. Create a new branch for your feature:
-
 git checkout -b feature-name
 
-markdown
-Copy code
-
 3. Make your changes and commit them:
-
 git commit -m "Add feature"
 
-css
-Copy code
-
 4. Push your changes to your fork:
-
 git push origin feature-name
-
-css
-Copy code
 
 5. Create a pull request to the main repository
 
