@@ -4,7 +4,7 @@ import colors from '../../../utils/colors';
 import fonts from '../../../utils/fonts';
 import Rating from '../Rating';
 
-const ItemListFood = ({image, onPress}) => {
+const ItemListFood = ({image, onPress, rating, items}) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
       <View style={styles.container}>
@@ -13,7 +13,17 @@ const ItemListFood = ({image, onPress}) => {
           <Text style={styles.title}>Soup Bumil</Text>
           <Text style={styles.price}>IDR 289.000</Text>
         </View>
-        <Rating />
+        {items && (
+          <Text
+            style={{
+              fontFamily: fonts.poppins[400],
+              fontSize: 13,
+              color: colors.grey,
+            }}>
+            {items} items
+          </Text>
+        )}
+        {rating && <Rating />}
       </View>
     </TouchableOpacity>
   );
@@ -25,7 +35,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: 'white',
-    paddingHorizontal: 24,
     paddingVertical: 8,
     alignItems: 'center',
   },

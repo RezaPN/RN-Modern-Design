@@ -44,7 +44,7 @@ const FoodDetail = ({navigation}) => {
             <Text style={styles.price}>IDR 12.289.000</Text>
           </View>
           <View style={{width: 163, height: 45}}>
-            <Button text={'Order Now'} />
+            <Button text={'Order Now'} onPress={() => navigation.navigate('OrderSummary')} />
           </View>
         </View>
       </View>

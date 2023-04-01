@@ -15,22 +15,26 @@ const NewTaste = () => {
   const navigation = useNavigation();
   return (
     <ScrollView>
-      <View style={{paddingTop: 8}}>
+      <View style={styles.itemListFoodWrapper}>
         <ItemListFood
           image={FoodDummy1}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy2}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy3}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy4}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
       </View>
     </ScrollView>
@@ -41,22 +45,26 @@ const Popular = () => {
   const navigation = useNavigation();
   return (
     <ScrollView>
-      <View style={{paddingTop: 8}}>
+      <View style={styles.itemListFoodWrapper}>
         <ItemListFood
           image={FoodDummy4}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy3}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy1}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy2}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
       </View>
     </ScrollView>
@@ -67,22 +75,26 @@ const Recommended = () => {
   const navigation = useNavigation();
   return (
     <ScrollView>
-      <View style={{paddingTop: 8}}>
+      <View style={styles.itemListFoodWrapper}>
         <ItemListFood
           image={FoodDummy3}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy1}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy2}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
         <ItemListFood
           image={FoodDummy4}
           onPress={() => navigation.navigate('FoodDetail')}
+          rating={5}
         />
       </View>
     </ScrollView>
@@ -149,4 +161,6 @@ const HomeTabSection = () => {
 
 export default HomeTabSection;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  itemListFoodWrapper: {paddingTop: 8, paddingHorizontal: 24}
+});

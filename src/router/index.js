@@ -9,27 +9,35 @@ import {
   Profile,
   Order,
   FoodDetail,
+  OrderSummary,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { BottomNavigator } from '../components';
+import {BottomNavigator} from '../components';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 
 const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
-      <Tab.Screen name="Order" component={Order} options={{headerShown: false}} />
-      <Tab.Screen name="Profile" component={Profile} options={{headerShown: false}} />
+      <Tab.Screen
+        name="Order"
+        component={Order}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{headerShown: false}}
+      />
     </Tab.Navigator>
   );
 };
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName='MainApp'>
+    <Stack.Navigator initialRouteName="MainApp">
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
@@ -60,9 +68,14 @@ const Router = () => {
         component={MainApp}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="FoodDetail"
         component={FoodDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="OrderSummary"
+        component={OrderSummary}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
