@@ -15,7 +15,9 @@ const FoodDetail = ({navigation}) => {
   return (
     <View style={styles.page}>
       <ImageBackground source={FoodDummy5} style={styles.imgBackground}>
-        <TouchableOpacity style={styles.back} onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={styles.back}
+          onPress={() => navigation.goBack()}>
           <IcBackWhite />
         </TouchableOpacity>
       </ImageBackground>
@@ -44,7 +46,10 @@ const FoodDetail = ({navigation}) => {
             <Text style={styles.price}>IDR 12.289.000</Text>
           </View>
           <View style={{width: 163, height: 45}}>
-            <Button text={'Order Now'} onPress={() => navigation.navigate('OrderSummary')} />
+            <Button
+              text={'Order Now'}
+              onPress={() => navigation.navigate('OrderSummary')}
+            />
           </View>
         </View>
       </View>

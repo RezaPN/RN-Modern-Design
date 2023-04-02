@@ -9,7 +9,7 @@ const FirstRowRender = ({}) => {
   return (
     <>
       <Text style={styles.title}>Item Ordered</Text>
-      <ItemListFood image={FoodDummy1} items={16} />
+      <ItemListFood image={FoodDummy1} items={16} type={'order-summary'} name={'Cherry Healthy'} price={'289.000'} />
     </>
   );
 };
