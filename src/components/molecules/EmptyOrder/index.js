@@ -1,29 +1,32 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {Success} from '../../assets';
-import {Button, Gap} from '../../components';
-import colors from '../../utils/colors';
+import {ILOrderEmpty} from '../../../assets';
+import {Button, Gap} from '../../../components';
+import colors from '../../../utils/colors';
+import {useNavigation} from '@react-navigation/native';
 
-const SuccessSignUp = ({navigation}) => {
+const EmptyOrder = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Success />
-   
+      <ILOrderEmpty />
       <Gap height={30} />
-      <Text style={styles.title}>Yeay! Completed</Text>
+      <Text style={styles.title}>Ouch! Hungry</Text>
       <Text style={styles.subtitle}>
-       {' Now you are able to order\n some foods as a self-reward'}
+        {'Seems like you have not\nordered any food yet'}
       </Text>
       <Gap height={30} />
       <View style={styles.buttonWrapper}>
-      <Button text={'Find Foods'} onPress={() => navigation.replace("MainApp")} />
+        <Button
+          text={'Find Foods'}
+          onPress={() => navigation.navigate('MainApp', {screen: 'Home'})}
+        />
       </View>
- 
     </View>
   );
 };
- 
-export default SuccessSignUp;
+
+export default EmptyOrder;
 
 const styles = StyleSheet.create({
   container: {
@@ -46,6 +49,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
   },
   buttonWrapper: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });

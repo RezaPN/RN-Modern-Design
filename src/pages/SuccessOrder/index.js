@@ -1,29 +1,38 @@
 import {StyleSheet, Text, View} from 'react-native';
+import {ILSuccessOrder} from '../../assets';
 import React from 'react';
-import {Success} from '../../assets';
 import {Button, Gap} from '../../components';
 import colors from '../../utils/colors';
 
-const SuccessSignUp = ({navigation}) => {
+const SuccessOrder = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Success />
-   
+      <ILSuccessOrder />
+
       <Gap height={30} />
-      <Text style={styles.title}>Yeay! Completed</Text>
+      <Text style={styles.title}>You’ve Made Order</Text>
       <Text style={styles.subtitle}>
-       {' Now you are able to order\n some foods as a self-reward'}
+        {'Just stay at home while we are\npreparing your best foods'}
       </Text>
       <Gap height={30} />
       <View style={styles.buttonWrapper}>
-      <Button text={'Find Foods'} onPress={() => navigation.replace("MainApp")} />
+        <Button
+          text={'Order Other Foods'}
+          onPress={() => navigation.replace('MainApp')}
+        />
+        <Gap height={12}/>
+        <Button
+          text={'View My Order'}
+          onPress={() => navigation.replace('MainApp', {screen: 'Order'})}
+          color={colors.grey}
+          textColor={colors.white}
+        />
       </View>
- 
     </View>
   );
 };
- 
-export default SuccessSignUp;
+
+export default SuccessOrder;
 
 const styles = StyleSheet.create({
   container: {
@@ -46,6 +55,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
   },
   buttonWrapper: {
-    width: '100%'
-  }
+    width: '100%',
+  },
 });

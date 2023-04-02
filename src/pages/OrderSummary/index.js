@@ -18,10 +18,14 @@ const SecondRowRender = ({}) => {
   return (
     <>
       <Text style={styles.title}>Details Transaction</Text>
-      <ItemValue label='Cherry Healthy'  value='IDR 18.390.000' />
-      <ItemValue label='Driver'  value='IDR 50.000' />
-      <ItemValue label='Tax 10%'  value='IDR 1.800.390' />
-      <ItemValue label='Total Price'  value='IDR 390.803.000' valueStyle={{color: colors.green}}/>
+      <ItemValue label="Cherry Healthy" value="IDR 18.390.000" />
+      <ItemValue label="Driver" value="IDR 50.000" />
+      <ItemValue label="Tax 10%" value="IDR 1.800.390" />
+      <ItemValue
+        label="Total Price"
+        value="IDR 390.803.000"
+        valueStyle={{color: colors.green}}
+      />
     </>
   );
 };
@@ -30,11 +34,11 @@ const ThirdRowRender = ({}) => {
   return (
     <>
       <Text style={styles.title}>Deliver to:</Text>
-      <ItemValue label='Name'  value='Angga Risky' />
-      <ItemValue  label='Phone No.'  value='0822 0819 9688' />
-      <ItemValue  label='Address'  value='Setra Duta Palima' />
-      <ItemValue  label='House No.'  value='A5 Hook' />
-      <ItemValue   label='City'  value='Bandung'/>
+      <ItemValue label="Name" value="Angga Risky" />
+      <ItemValue label="Phone No." value="0822 0819 9688" />
+      <ItemValue label="Address" value="Setra Duta Palima" />
+      <ItemValue label="House No." value="A5 Hook" />
+      <ItemValue label="City" value="Bandung" />
     </>
   );
 };
@@ -59,8 +63,13 @@ const OrderSummary = ({navigation}) => {
             <ThirdRowRender />
           </View>
           <Gap height={24} />
-          <View style={{marginBottom: 26, marginHorizontal: 24}}> 
-            <Button text={'Checkout Now'} />
+          <View style={{marginBottom: 26, marginHorizontal: 24}}>
+            <Button
+              text={'Checkout Now'}
+              onPress={() => {
+                navigation.replace('SuccessOrder');
+              }}
+            />
           </View>
         </View>
       </ScrollView>

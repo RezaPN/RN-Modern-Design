@@ -10,6 +10,7 @@ import {
   Order,
   FoodDetail,
   OrderSummary,
+  SuccessOrder,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
@@ -37,7 +38,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="SuccessOrder">
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
@@ -76,6 +77,11 @@ const Router = () => {
       <Stack.Screen
         name="OrderSummary"
         component={OrderSummary}
+        options={{headerShown: false}}
+      />
+        <Stack.Screen
+        name="SuccessOrder"
+        component={SuccessOrder}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

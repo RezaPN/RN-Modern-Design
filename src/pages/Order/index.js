@@ -1,14 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
+import {EmptyOrder, Header} from '../../components';
 
-const Order = () => {
+const RenderOrder = ({}) => {
   return (
     <View>
-      <Text>This Order Screen</Text>
+      <Header title={'Your Orders'} subtitle={'Wait for the best meal'} />
     </View>
-  )
+  );
 }
 
-export default Order
+const Order = ({navigation}) => {
+  const [isEmpty] = useState(false);
 
-const styles = StyleSheet.create({})
+  return (
+    <View style={styles.container}>
+      {isEmpty ? <EmptyOrder /> : <RenderOrder /> }
+    </View>
+  );
+};
+
+export default Order;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
