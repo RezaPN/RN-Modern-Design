@@ -16,7 +16,7 @@ const InProgress = () => {
       <View style={styles.itemListFoodWrapper}>
         <ItemListFood
           image={FoodDummy1}
-          onPress={() => navigation.navigate('FoodDetail')}
+          onPress={() => navigation.navigate('OrderDetail')}
           items={3}
           price={'18.000.000'}
           type={'in-progress'}
@@ -24,7 +24,7 @@ const InProgress = () => {
         />
         <ItemListFood
           image={FoodDummy2}
-          onPress={() => navigation.navigate('FoodDetail')}
+          onPress={() => navigation.navigate('OrderDetail')}
           items={3}
           price={'18.000.000'}
           type={'in-progress'}
@@ -32,7 +32,7 @@ const InProgress = () => {
         />
         <ItemListFood
           image={FoodDummy3}
-          onPress={() => navigation.navigate('FoodDetail')}
+          onPress={() => navigation.navigate('OrderDetail')}
           items={3}
           price={'18.000.000'}
           type={'in-progress'}
@@ -40,7 +40,7 @@ const InProgress = () => {
         />
         <ItemListFood
           image={FoodDummy4}
-          onPress={() => navigation.navigate('FoodDetail')}
+          onPress={() => navigation.navigate('OrderDetail')}
           items={3}
           price={'18.000.000'}
           type={'in-progress'}
@@ -58,7 +58,7 @@ const PastOrders = () => {
       <View style={styles.itemListFoodWrapper}>
         <ItemListFood
           image={FoodDummy1}
-          onPress={() => navigation.navigate('FoodDetail')}
+          onPress={() => navigation.navigate('OrderDetail')}
           price={'18.000.000'}
           type={'past-orders'}
           name={'Sop Bumil'}
@@ -66,7 +66,7 @@ const PastOrders = () => {
         />
         <ItemListFood
           image={FoodDummy2}
-          onPress={() => navigation.navigate('FoodDetail')}
+          onPress={() => navigation.navigate('OrderDetail')}
           price={'18.000.000'}
           type={'past-orders'}
           name={'Sop Bumil'}
