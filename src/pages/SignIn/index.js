@@ -2,7 +2,8 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
 import colors from '../../utils/colors';
-import { useForm } from '../../utils';
+import {useForm} from '../../utils';
+import axios from 'axios';
 
 const SignIn = ({navigation}) => {
   // const [email, setEmail] = useState('');
@@ -14,6 +15,13 @@ const SignIn = ({navigation}) => {
 
   const onSubmit = () => {
     console.log('form: ', form);
+    axios.post('http://foodmarket-backend.buildwithangga.id/api/login', form)
+      .then(response => {
+        console.log('success', response);
+      })  
+      .catch(error => {
+        console.log('error', error);
+      });
   };
 
   return (
@@ -42,12 +50,15 @@ const SignIn = ({navigation}) => {
           onChangeText={value => {
             setForm('password', value);
           }}
-        secureTextEntry
+          secureTextEntry
         />
         <Gap height={24} />
-        <Button text={'Sign In'} onPress={() => {
-          onSubmit();
-        }} />
+        <Button
+          text={'Sign In'}
+          onPress={() => {
+            onSubmit();
+          }}
+        />
         <Gap height={12} />
         <Button
           onPress={() => {
